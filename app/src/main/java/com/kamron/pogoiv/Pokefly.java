@@ -211,9 +211,17 @@ public class Pokefly extends Service {
         super.onDestroy();
         if (IVButton != null && IVButtonShown) windowManager.removeView(IVButton);
         if (infoShown) {
-            if (arcPointer != null) windowManager.removeView(arcPointer);
+            try {
+                if (arcPointer != null) windowManager.removeView(arcPointer);
+            } catch (IllegalArgumentException iae) {
+
+            }
             //if(arcAdjustBar != null) windowManager.removeView(arcAdjustBar);
-            if (infoLayout != null) windowManager.removeView(infoLayout);
+            try {
+                if (infoLayout != null) windowManager.removeView(infoLayout);
+            } catch (IllegalArgumentException iae) {
+
+            }
         }
         stopForeground(true);
         LocalBroadcastManager.getInstance(this).unregisterReceiver(displayInfo);
