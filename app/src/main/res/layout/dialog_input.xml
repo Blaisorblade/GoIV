@@ -112,7 +112,8 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:id="@+id/baseInput">
 
         <Button
             android:id="@+id/btnDecrementLevel"

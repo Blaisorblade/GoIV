@@ -800,9 +800,12 @@ public class Pokefly extends Service {
         WindowManager.LayoutParams newParams = (WindowManager.LayoutParams) infoLayout.getLayoutParams();
         if (appraisalBox.getVisibility() == View.VISIBLE) {
             newParams.gravity = Gravity.TOP;
+            infoLayout.findViewById(R.id.baseInput).setVisibility(View.GONE);
         }else{
             newParams.gravity = Gravity.BOTTOM;
+            infoLayout.findViewById(R.id.baseInput).setVisibility(View.VISIBLE);
         }
+
         windowManager.updateViewLayout(infoLayout, newParams);
     }
 
